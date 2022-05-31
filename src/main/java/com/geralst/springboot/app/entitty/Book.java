@@ -1,7 +1,7 @@
 package com.geralst.springboot.app.entitty;
 
-import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,21 +16,15 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotBlank
 	private String title;
-	@NotBlank
 	private String author;
-	@NotBlank
 	private String editorial;
 	
 	public Book() {
 		
 	}
-
 	
-	public Book(Long id, @NotBlank String title, @NotBlank String author, @NotBlank String editorial) {
-		this.id = id;
+	public Book(Long id,  String title, String author, String editorial) {
 		this.title = title;
 		this.author = author;
 		this.editorial = editorial;
